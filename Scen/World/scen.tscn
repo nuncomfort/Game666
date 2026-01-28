@@ -779,7 +779,7 @@ position = Vector2(-3.250001, 3.2656262)
 scale = Vector2(0.5520833, 0.543457)
 sprite_frames = SubResource("SpriteFrames_3m1xu")
 animation = &"idle_right"
-frame_progress = 0.4169053
+frame_progress = 0.5308598
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1094443353]
 position = Vector2(-3, 8)

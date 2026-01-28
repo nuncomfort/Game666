@@ -22,4 +22,3 @@ func _process(_delta):
 		_animated_sprite.play("idle")
 	else:
 		_animated_sprite.stop()
-		
