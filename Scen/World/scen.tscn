@@ -811,6 +811,6 @@ position = Vector2(27, 61)
 shape = SubResource("CircleShape2D_o2nbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bullet" unique_id=331296536]
-position = Vector2(27, 61.000004)
+position = Vector2(27.000002, 61)
 scale = Vector2(0.10156248, 0.10156248)
 texture = ExtResource("6_wdbtf")
