@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dkn4tyfto15gl" path="res://0x72_DungeonTilesetII_v1.7.png" id="4_dcxf0"]
 [ext_resource type="Texture2D" uid="uid://cjtc7dqi4a60r" path="res://Scen/7Assoultrifle07.png" id="4_j8v13"]
 [ext_resource type="Script" uid="uid://75dcx05lkfv7" path="res://Scen/World/bullet.gd" id="5_054sw"]
-[ext_resource type="Texture2D" uid="uid://bv40r0pac653m" path="res://icon.svg" id="6_wdbtf"]
+[ext_resource type="Texture2D" uid="uid://rd0lx3fs5d0r" path="res://Scen/Player/sprite_1.png" id="6_054sw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qj24p"]
 texture = ExtResource("4_dcxf0")
@@ -762,7 +762,7 @@ animations = [{
 size = Vector2(14, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o2nbl"]
-radius = 7.0
+radius = 4.472136
 
 [node name="Scen" type="Node2D" unique_id=1602710640]
 
@@ -804,6 +804,7 @@ position = Vector2(3, 0)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bullet" type="Area2D" parent="." unique_id=515417204]
+position = Vector2(83.39, 17.95)
 script = ExtResource("5_054sw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet" unique_id=392159020]
@@ -811,6 +812,6 @@ position = Vector2(27, 61)
 shape = SubResource("CircleShape2D_o2nbl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bullet" unique_id=331296536]
-position = Vector2(27.000002, 61)
-scale = Vector2(0.10156248, 0.10156248)
-texture = ExtResource("6_wdbtf")
+position = Vector2(27, 60.5)
+scale = Vector2(0.87500006, 0.8999999)
+texture = ExtResource("6_054sw")
