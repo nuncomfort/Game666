@@ -667,13 +667,13 @@ region = Rect2(96, 128, 48, 64)
 atlas = ExtResource("3_ooiia")
 region = Rect2(48, 0, 48, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3m1xu"]
-atlas = ExtResource("3_ooiia")
-region = Rect2(0, 0, 48, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gtxc"]
 atlas = ExtResource("3_ooiia")
 region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m1xu"]
+atlas = ExtResource("3_ooiia")
+region = Rect2(0, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d60gn"]
 atlas = ExtResource("3_ooiia")
@@ -720,10 +720,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_wtr4o")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_3m1xu")
+"texture": SubResource("AtlasTexture_4gtxc")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_4gtxc")
+"texture": SubResource("AtlasTexture_3m1xu")
 }],
 "loop": true,
 "name": &"idle_back",
@@ -780,7 +780,7 @@ script = ExtResource("2_8eqkx")
 position = Vector2(0.99999857, 3.0000012)
 scale = Vector2(0.5520833, 0.543457)
 sprite_frames = SubResource("SpriteFrames_3m1xu")
-animation = &"idle"
+animation = &"idle_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1094443353]
 position = Vector2(1, 8)
