@@ -7,14 +7,15 @@
 size = Vector2(9, 4)
 
 [node name="Bullet" type="Area2D" unique_id=513872012]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_4tm3p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631583941]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_4tm3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=521290833]
-position = Vector2(-5.9604645e-08, 0)
+position = Vector2(-7.523164e-37, 0)
 scale = Vector2(0.92361104, 0.94999975)
 texture = ExtResource("2_75xuh")
 flip_h = true
