@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bdchp6mok5l6f"]
+
+[ext_resource type="Script" uid="uid://b557whloraa28" path="res://Scen/Player/character_body_2d.gd" id="1_jht41"]
+[ext_resource type="Texture2D" uid="uid://cwg1dx5gwlmwg" path="res://Santa-001-black.png" id="3_r4jjf"]
+[ext_resource type="Texture2D" uid="uid://cjtc7dqi4a60r" path="res://Scen/7Assoultrifle07.png" id="4_besid"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5evj"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(48, 128, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip0j"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(0, 128, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooiia"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(96, 128, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtr4o"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gtxc"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m1xu"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d60gn"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(48, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wseqm"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(0, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksvsw"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(96, 64, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhcvy"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(48, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8fen"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(0, 192, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3arxm"]
+atlas = ExtResource("3_r4jjf")
+region = Rect2(96, 192, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3m1xu"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_s5evj")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bip0j")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ooiia")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_wtr4o")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_4gtxc")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3m1xu")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_d60gn")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_wseqm")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ksvsw")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_bhcvy")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_o8fen")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_3arxm")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8eqkx"]
+size = Vector2(14, 24)
+
+[node name="Player" type="CharacterBody2D" unique_id=241494615]
+position = Vector2(1, 0)
+motion_mode = 1
+script = ExtResource("1_jht41")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1972409358]
+scale = Vector2(0.5677083, 0.55297846)
+sprite_frames = SubResource("SpriteFrames_3m1xu")
+animation = &"idle_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222874630]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_8eqkx")
+debug_color = Color(2.695322e-06, 0.5991693, 0.7067014, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=650658056]
+zoom = Vector2(3.02, 3.02)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1967265392]
+target_position = Vector2(29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="RayCast2D" unique_id=1940230532]
+position = Vector2(-1.1368684e-13, 5)
+scale = Vector2(0.556, 0.585)
+texture = ExtResource("4_besid")
+
+[node name="Marker2D" type="Marker2D" parent="RayCast2D" unique_id=1409076416]
+position = Vector2(10, 4)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=472087083]
+offset_left = -22.0
+offset_top = -37.0
+offset_right = 19.0
+offset_bottom = -10.0
+max_value = 10.0
+value = 10.0
+exp_edit = true

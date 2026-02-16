@@ -6,9 +6,9 @@ extends CharacterBody2D
 var bullet = preload("res://Scen/World/bullet.tscn") 
 
 func shoot():
-	var b = Bullet.instantiate()
-	owner.add_child(b)
-	b.transform = $RayCast2D/Marker2D.global_transform
+	var b = bullet.instantiate()
+	get_tree().current_scene.add_child(b)
+	b.global_transform = $RayCast2D/Marker2D.global_transform
 	 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
