@@ -4,11 +4,13 @@ extends CharacterBody2D
 @export var speed = 70
 @export var Bullet : PackedScene
 var bullet = preload("res://Scen/World/bullet.tscn") 
-
+@export var health: int = 3
+@onready var shoot_sound = $ShootSound
 func shoot():
 	var b = bullet.instantiate()
-	get_tree().current_scene.add_child(b)
+	owner.add_child(b)
 	b.global_transform = $RayCast2D/Marker2D.global_transform
+	shoot_sound.play()
 	 
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -31,3 +33,13 @@ func _physics_process(_delta):
 	else:
 		_animated_sprite.stop()
 	$RayCast2D.look_at(get_global_mouse_position())
+	
+func take_damage(amount: int):
+		health -= amount
+		print("У игрока осталось HP: ", health)
+		
+		if health <= 0:
+			die()
+func die():
+	print("Игрок погиб!")
+	get_tree().reload_current_scene()

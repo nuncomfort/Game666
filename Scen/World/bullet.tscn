@@ -7,7 +7,6 @@
 size = Vector2(9, 4)
 
 [node name="Bullet" type="Area2D" unique_id=513872012]
-collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_4tm3p")
 

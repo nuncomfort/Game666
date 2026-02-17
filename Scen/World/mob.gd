@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 40
-@export var health = 3
+@export var health = 1
 var player = null
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -27,10 +27,21 @@ func _physics_process(_delta):
 			else:
 				_animated_sprite.play("walk_back") 
 
-
-
-func take_damage(amount):
+func take_damage(amount: int):
 	health -= amount
-	print("Враг ранен! HP: ", health)
+	print("У врага осталось HP: ", health)
+	
 	if health <= 0:
-		queue_free()
+		die()
+
+func die():
+	queue_free()
+
+
+func _on_hitbox_body_entered(body: Node2D):
+	if body.name == "Player":
+		if body.has_method("take_damage"):
+			body.take_damage(1)
+
+
+	
