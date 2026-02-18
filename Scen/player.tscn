@@ -150,6 +150,6 @@ position = Vector2(10, -1)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=709010670]
 stream = ExtResource("4_jht41")
-volume_db = -3.0
+volume_db = -22.373
 
 [node name="Firemed" type="RayCast2D" parent="." unique_id=1060106935]

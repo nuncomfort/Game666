@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://s7ihmr5736mv"]
+
+[ext_resource type="Script" uid="uid://dlft0due84r36" path="res://Scen/Player/ui.gd" id="1_o4vvu"]
+
+[sub_resource type="Gradient" id="Gradient_p3x3q"]
+offsets = PackedFloat32Array(0.9930556, 1)
+colors = PackedColorArray(1.0193657, 0, 0.012444452, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qd3n1"]
+gradient = SubResource("Gradient_p3x3q")
+width = 300
+height = 40
+fill_to = Vector2(0, 0)
+
+[node name="Ui" type="CanvasLayer" unique_id=1145632748]
+script = ExtResource("1_o4vvu")
+
+[node name="Control" type="Control" parent="." unique_id=1408417265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="hp bar" type="Control" parent="Control" unique_id=1837279937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -852.0
+offset_bottom = -598.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control/hp bar" unique_id=708671683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 7.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+texture_progress = SubResource("GradientTexture2D_qd3n1")

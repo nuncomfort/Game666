@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cs5yfty5nuyvg" path="res://Scen/World/bullet.tscn" id="4_j8v13"]
 [ext_resource type="Script" uid="uid://ba8xk4xbxhhga" path="res://Scen/World/spawner.gd" id="5_6bd2a"]
 [ext_resource type="PackedScene" uid="uid://0k8vdekei6de" path="res://Scen/World/mob.tscn" id="6_054sw"]
+[ext_resource type="PackedScene" uid="uid://s7ihmr5736mv" path="res://Scen/Player/ui.tscn" id="6_wdbtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qj24p"]
 texture = ExtResource("4_dcxf0")
@@ -667,7 +668,7 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_qj24p")
 
 [node name="World" type="Node2D" unique_id=1602710640]
-position = Vector2(-10, -59)
+position = Vector2(-11, -59)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=745490221]
 position = Vector2(4, -4)
@@ -677,9 +678,10 @@ tile_set = SubResource("TileSet_3rr7v")
 [node name="Mob" parent="." unique_id=206676402 instance=ExtResource("6_054sw")]
 position = Vector2(131, -141)
 
-[node name="Player" parent="." unique_id=241494615 instance=ExtResource("3_8eqkx")]
+[node name="Player" parent="." unique_id=241494615 node_paths=PackedStringArray("ui") instance=ExtResource("3_8eqkx")]
 position = Vector2(-592, -267)
 Bullet = ExtResource("4_j8v13")
+ui = NodePath("../Ui")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=1298311433]
 position = Vector2(32, 9)
@@ -688,5 +690,7 @@ script = ExtResource("5_6bd2a")
 [node name="Timer" type="Timer" parent="Spawner" unique_id=1888267662]
 wait_time = 0.312
 autostart = true
+
+[node name="Ui" parent="." unique_id=1145632748 instance=ExtResource("6_wdbtf")]
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

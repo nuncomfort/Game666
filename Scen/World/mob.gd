@@ -57,9 +57,17 @@ func die():
 
 
 func _on_hitbox_body_entered(body: Node2D):
-	if body.name == "Player":
-		if body.has_method("take_damage"):
-			body.take_damage(1)
+	while is_instance_valid(body) and $hitbox.overlaps_body(body):
+		if body.name == "Player":
+			if body.has_method("take_damage"):
+				body.take_damage(1)
+		if is_inside_tree():	
+			await get_tree().create_timer(0.1).timeout
+		else:
+			break
+				
+				
+			
 
 
 	

@@ -5,7 +5,10 @@ extends CharacterBody2D
 @export var Bullet : PackedScene
 var bullet = preload("res://Scen/World/bullet.tscn") 
 @export var health = 10
+@export var ui: CanvasLayer
 @onready var shoot_sound = $ShootSound
+func _ready():
+	ui.max_value=health
 func shoot():
 	var b = bullet.instantiate()
 	owner.add_child(b)
@@ -37,6 +40,7 @@ func _physics_process(_delta):
 func take_damage(amount: int):
 		health -= amount
 		print("У игрока осталось HP: ", health)
+		ui.set_value(health)
 		
 		if health <= 0:
 			die()
