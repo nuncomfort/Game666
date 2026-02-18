@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed = 70
 @export var Bullet : PackedScene
 var bullet = preload("res://Scen/World/bullet.tscn") 
-@export var health: int = 3
+@export var health = 10
 @onready var shoot_sound = $ShootSound
 func shoot():
 	var b = bullet.instantiate()

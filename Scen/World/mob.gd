@@ -35,7 +35,14 @@ func take_damage(amount: int):
 		die()
 
 func die():
+	set_physics_process(false)
+	_animated_sprite.play("dead")
+	collision_layer = 0
+	
+	await get_tree().create_timer(0.6).timeout
 	queue_free()
+
+
 
 
 func _on_hitbox_body_entered(body: Node2D):

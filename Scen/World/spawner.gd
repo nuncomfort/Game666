@@ -7,7 +7,7 @@ func _on_timer_timeout():
 	
 	var spawn_pos = Vector2(
 		randf_range(0, 500),
-		randf_range(0, 150)
+		randf_range(0, 500)
 	)
 	
 	mob.global_position = spawn_pos
