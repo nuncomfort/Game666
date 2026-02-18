@@ -113,7 +113,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8eqkx"]
-size = Vector2(13, 23)
+size = Vector2(13, 22)
 
 [node name="Player" type="CharacterBody2D" unique_id=241494615]
 position = Vector2(1, 0)
@@ -128,7 +128,7 @@ frame = 1
 frame_progress = 0.85125846
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222874630]
-position = Vector2(0.5, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_8eqkx")
 debug_color = Color(2.695322e-06, 0.5991693, 0.7067014, 0.41960785)
 
@@ -136,27 +136,17 @@ debug_color = Color(2.695322e-06, 0.5991693, 0.7067014, 0.41960785)
 zoom = Vector2(3.02, 3.02)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1967265392]
-position = Vector2(1, 3)
+position = Vector2(0, 4)
 target_position = Vector2(29, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="RayCast2D" unique_id=1940230532]
-position = Vector2(-2.842171e-14, 0)
+position = Vector2(-1.9073486e-06, 0)
 scale = Vector2(0.556, 0.585)
 texture = ExtResource("4_besid")
 
 [node name="Marker2D" type="Marker2D" parent="RayCast2D" unique_id=1409076416]
 position = Vector2(10, -1)
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=472087083]
-offset_left = -188.0
-offset_top = -105.0
-offset_right = -147.0
-offset_bottom = -78.0
-max_value = 10.0
-value = 10.0
-exp_edit = true
-
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=709010670]
-position = Vector2(0, 1)
 stream = ExtResource("4_jht41")
 volume_db = -3.0

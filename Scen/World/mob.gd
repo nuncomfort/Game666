@@ -36,7 +36,18 @@ func take_damage(amount: int):
 
 func die():
 	set_physics_process(false)
-	_animated_sprite.play("dead")
+	if abs(velocity.x) > abs(velocity.y): 
+		if velocity.x < 0:
+			_animated_sprite.play("dead_left")
+		else:
+			_animated_sprite.play("dead_right")
+	else:
+				if velocity.y < 0:
+					_animated_sprite.play("dead_back")
+				else:
+					_animated_sprite.play("dead_up")
+	
+	
 	collision_layer = 0
 	
 	await get_tree().create_timer(0.6).timeout
