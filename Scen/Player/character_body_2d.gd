@@ -9,7 +9,7 @@ var bullet = preload("res://Scen/World/bullet.tscn")
 func shoot():
 	var b = bullet.instantiate()
 	owner.add_child(b)
-	b.global_transform = $RayCast2D/Marker2D.global_transform
+	b.global_transform = $m4a1/Marker2D.global_transform
 	shoot_sound.play()
 	 
 func get_input():
@@ -32,7 +32,7 @@ func _physics_process(_delta):
 		_animated_sprite.play("idle")
 	else:
 		_animated_sprite.stop()
-	$RayCast2D.look_at(get_global_mouse_position())
+	$m4a1.look_at(get_global_mouse_position())
 	
 func take_damage(amount: int):
 		health -= amount

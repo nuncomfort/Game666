@@ -250,6 +250,7 @@ radius = 6.0
 size = Vector2(22, 27.5)
 
 [node name="Mob" type="CharacterBody2D" unique_id=742092047]
+position = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_2ggnk")

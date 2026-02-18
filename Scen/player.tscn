@@ -117,6 +117,7 @@ size = Vector2(13, 22)
 
 [node name="Player" type="CharacterBody2D" unique_id=241494615]
 position = Vector2(1, 0)
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_jht41")
 
@@ -135,18 +136,20 @@ debug_color = Color(2.695322e-06, 0.5991693, 0.7067014, 0.41960785)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=650658056]
 zoom = Vector2(3.02, 3.02)
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1967265392]
+[node name="m4a1" type="RayCast2D" parent="." unique_id=1967265392]
 position = Vector2(0, 4)
 target_position = Vector2(29, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="RayCast2D" unique_id=1940230532]
+[node name="Sprite2D" type="Sprite2D" parent="m4a1" unique_id=1940230532]
 position = Vector2(-1.9073486e-06, 0)
 scale = Vector2(0.556, 0.585)
 texture = ExtResource("4_besid")
 
-[node name="Marker2D" type="Marker2D" parent="RayCast2D" unique_id=1409076416]
+[node name="Marker2D" type="Marker2D" parent="m4a1" unique_id=1409076416]
 position = Vector2(10, -1)
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=709010670]
 stream = ExtResource("4_jht41")
 volume_db = -3.0
+
+[node name="Firemed" type="RayCast2D" parent="." unique_id=1060106935]
