@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bdchp6mok5l6f"]
+[gd_scene load_steps=19 format=3 uid="uid://bdchp6mok5l6f"]
 
 [ext_resource type="Script" uid="uid://b557whloraa28" path="res://Scen/Player/character_body_2d.gd" id="1_jht41"]
 [ext_resource type="Texture2D" uid="uid://cwg1dx5gwlmwg" path="res://Santa-001-black.png" id="3_r4jjf"]
@@ -113,43 +113,43 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8eqkx"]
-size = Vector2(13, 22)
+size = Vector2(12.5, 22)
 
-[node name="Player" type="CharacterBody2D" unique_id=241494615]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 0)
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_jht41")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1972409358]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5677083, 0.55297846)
 sprite_frames = SubResource("SpriteFrames_3m1xu")
 animation = &"idle"
 frame = 1
 frame_progress = 0.85125846
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222874630]
-position = Vector2(0, 4)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 4)
 shape = SubResource("RectangleShape2D_8eqkx")
 debug_color = Color(2.695322e-06, 0.5991693, 0.7067014, 0.41960785)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=650658056]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3.02, 3.02)
 
-[node name="m4a1" type="RayCast2D" parent="." unique_id=1967265392]
+[node name="m4a1" type="RayCast2D" parent="."]
 position = Vector2(0, 4)
 target_position = Vector2(29, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="m4a1" unique_id=1940230532]
+[node name="Sprite2D" type="Sprite2D" parent="m4a1"]
 position = Vector2(-1.9073486e-06, 0)
 scale = Vector2(0.556, 0.585)
 texture = ExtResource("4_besid")
 
-[node name="Marker2D" type="Marker2D" parent="m4a1" unique_id=1409076416]
+[node name="Marker2D" type="Marker2D" parent="m4a1"]
 position = Vector2(10, -1)
 
-[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=709010670]
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_jht41")
 volume_db = -22.373
 
-[node name="Firemed" type="RayCast2D" parent="." unique_id=1060106935]
+[node name="Firemed" type="RayCast2D" parent="."]

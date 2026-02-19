@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://0k8vdekei6de"]
+[gd_scene load_steps=35 format=3 uid="uid://0k8vdekei6de"]
 
 [ext_resource type="Script" uid="uid://cc18w6p4kdp5y" path="res://Scen/World/mob.gd" id="1_2ggnk"]
 [ext_resource type="Texture2D" uid="uid://bsk108y0rm6h0" path="res://Scen/Skeleton/skeleton.png" id="2_jsd25"]
@@ -247,29 +247,30 @@ animations = [{
 radius = 6.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ggnk"]
-size = Vector2(22, 27.5)
+size = Vector2(16, 22)
 
-[node name="Mob" type="CharacterBody2D" unique_id=742092047]
+[node name="Mob" type="CharacterBody2D"]
 position = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_2ggnk")
 metadata/_edit_horizontal_guides_ = [-24.0]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1545614029]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.4380625, 1.5732944)
 sprite_frames = SubResource("SpriteFrames_nbice")
 animation = &"dead_right"
 frame_progress = 0.41418734
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=3110960]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 512
 visibility_layer = 512
 shape = SubResource("CircleShape2D_2ggnk")
 
-[node name="hitbox" type="Area2D" parent="." unique_id=1394451955]
+[node name="hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=2009945133]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_2ggnk")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

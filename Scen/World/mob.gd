@@ -62,7 +62,7 @@ func _on_hitbox_body_entered(body: Node2D):
 			if body.has_method("take_damage"):
 				body.take_damage(1)
 		if is_inside_tree():	
-			await get_tree().create_timer(0.1).timeout
+			await get_tree().create_timer(1.0).timeout
 		else:
 			break
 				
