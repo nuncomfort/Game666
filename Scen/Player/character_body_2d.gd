@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 	
-	if Input.is_action_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	if Input.is_action_pressed("A"):
 		_animated_sprite.play("idle_right")

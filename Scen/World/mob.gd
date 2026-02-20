@@ -30,6 +30,7 @@ func _physics_process(_delta):
 func take_damage(amount: int):
 	health -= amount
 	print("У врага осталось HP: ", health)
+	$CPUParticles2D.emitting = true
 	
 	if health <= 0:
 		die()

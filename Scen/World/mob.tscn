@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://0k8vdekei6de"]
+[gd_scene format=3 uid="uid://0k8vdekei6de"]
 
 [ext_resource type="Script" uid="uid://cc18w6p4kdp5y" path="res://Scen/World/mob.gd" id="1_2ggnk"]
 [ext_resource type="Texture2D" uid="uid://bsk108y0rm6h0" path="res://Scen/Skeleton/skeleton.png" id="2_jsd25"]
@@ -249,28 +249,47 @@ radius = 6.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ggnk"]
 size = Vector2(16, 22)
 
-[node name="Mob" type="CharacterBody2D"]
+[sub_resource type="Curve" id="Curve_2ggnk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Mob" type="CharacterBody2D" unique_id=1466897584]
 position = Vector2(1, 1)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_2ggnk")
 metadata/_edit_horizontal_guides_ = [-24.0]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900113873]
 scale = Vector2(1.4380625, 1.5732944)
 sprite_frames = SubResource("SpriteFrames_nbice")
 animation = &"dead_right"
 frame_progress = 0.41418734
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=497972850]
 light_mask = 512
 visibility_layer = 512
 shape = SubResource("CircleShape2D_2ggnk")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="." unique_id=327947390]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1022638477]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_2ggnk")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1015885646]
+position = Vector2(-1, 1)
+emitting = false
+lifetime = 0.54
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(7.14, 0)
+spread = 104.1
+initial_velocity_min = 201.92
+initial_velocity_max = 201.92
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_curve = SubResource("Curve_2ggnk")
+color = Color(0.92156863, 0.8156863, 0.77254903, 1)
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
